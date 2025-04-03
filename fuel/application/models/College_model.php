@@ -29,6 +29,7 @@ class College_model extends CI_Model {
         if ($district) $this->db->where('district_name', $district);
         if ($college) $this->db->where('college_name', $college);
         $this->db->where('published', 'yes');
+        $this->db->where('type', '2');
         return $this->db->get()->result_array();
     }
 }

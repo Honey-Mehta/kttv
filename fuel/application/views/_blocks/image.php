@@ -16,7 +16,7 @@
                                 
                                 <img src="<?php echo img_path('gallery/' . $employee['image']); ?>" 
                                      alt="<?php echo $employee['name']; ?>" 
-                                     style="width: 300px; height: 300px;" />
+                                     style="width: 300px; height: 300px; object-fit: cover;" />
                             </div>
                          
                             <h6 class="team-title"><?php echo $employee['name']; ?></h6>

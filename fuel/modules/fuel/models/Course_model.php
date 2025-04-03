@@ -14,13 +14,43 @@ class Course_model extends Base_module_model
 
     public function list_items($limit = NULL, $offset = 0, $col = 'course_name', $order = 'asc', $just_count = false)
     {
-        $this->db->select('id, course_name, course_level, published');
-        return parent::list_items($limit, $offset, $col, $order, $just_count);
+        $this->db->select('id, course_name, course_level, type, published');
+        $data = parent::list_items($limit, $offset, $col, $order, $just_count);
+        foreach ($data as $key => $value) {
+            // Convert 'type' field to a readable format
+            if (isset($value['type'])) {
+                if ($value['type'] == 1) {
+                    $data[$key]['type'] = 'SOS';
+                } elseif ($value['type'] == 2) {
+                    $data[$key]['type'] = 'Affiliated Colleges and Courses';
+                }
+            }
+        }
+
+        return $data;
+
+
+
     }
 
     public function form_fields($values = [], $related = [])
     {
         $fields = parent::form_fields($values, $related);
+
+
+                      // Dropdown select list
+    $fields['type'] = array(
+        'type' => 'select',
+        'label' => 'Type',
+        'options' => array(
+            '1' => 'SOS', 
+            '2' => 'Affiliated Colleges and Courses'
+        ),
+        'comment' => 'Select the type of college.'
+    );
+
+
+
         
         $query = $this->db->select('id, course_level')
         ->from('course_level') // Assuming your table is named 'course_name'
@@ -31,11 +61,14 @@ class Course_model extends Base_module_model
             $course_level_options[$row->course_level] = $row->course_level; // Use 'id' as the key and 'course_name' as the value
             }
 
+
+   
+
             // Assign dynamic options to the 'course_name' field
             $fields['course_level']['options'] = $course_level_options;
             $fields['course_level']['type'] = 'select';
 
-
+   
         return $fields;
     }
 

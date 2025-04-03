@@ -92,7 +92,7 @@ $config['modules']['colleges_course_list'] = [
 		'delete' => 'colleges_course_list/delete'
 	),
     'module_uri' => 'colleges_course_list',
-    'table_headers' => ['id', 'college_name', 'course_name', 'course_level', 'branch_name', 'district_name', 'branch_mode', 'published'],  // Admin columns
+    'table_headers' => ['id', 'college_name', 'course_name', 'course_level', 'branch_name', 'district_name', 'branch_mode', 'type', 'published'],  // Admin columns
     // 'filters' => ['college_name', 'course_name', 'course_level', 'branch_name', 'district_name'], // Add filters here
 
 ];
@@ -143,7 +143,7 @@ $config['modules']['course_name'] = [
 	),
     'module_uri' => 'course_name',
 
-    'table_headers' => ['id', 'course_name', 'course_level', 'published'],  // Admin columns
+    'table_headers' => ['id', 'course_name', 'course_level', 'type', 'published'],  // Admin columns
 
 ];
 

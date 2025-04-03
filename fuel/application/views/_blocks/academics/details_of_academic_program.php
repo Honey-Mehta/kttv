@@ -35,7 +35,8 @@
             $courses_offered = fuel_model('course_name', [
                 'where' => [
                     'published' => 'yes',
-                    'course_level' => 'UG'
+                    'course_level' => 'UG',
+                    'type' => '1'
                 ]
             ]);
           
@@ -93,7 +94,8 @@ else: ?>
             $courses_offered = fuel_model('course_name', [
                 'where' => [
                     'published' => 'yes',
-                    'course_level' => 'PG'
+                    'course_level' => 'PG',
+                    'type' => '1'
                 ]
             ]);
           
@@ -150,7 +152,8 @@ else: ?>
             $courses_offered = fuel_model('course_name', [
                 'where' => [
                     'published' => 'yes',
-                    'course_level' => 'PGD'
+                    'course_level' => 'PGD',
+                    'type' => '1'
                 ]
             ]);
           
@@ -273,7 +276,7 @@ $(document).ready(function () {
             type: "POST",
             data: { course: courseName, nocache: timestamp }, // Send course data
             success: function () {
-                window.open("<?= site_url('academics/kttv_courses'); ?>", "_blank");
+                window.open("<?= site_url('academics/sos-details'); ?>", "_blank");
             },
             cache: false // Prevent AJAX caching
         });

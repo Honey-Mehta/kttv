@@ -3,7 +3,7 @@ require_once('Base_module_model.php');
 
 class Syllabus_model extends Base_module_model
 {
-    public $required = array('headline','description','pdf');
+    public $required = array('headline','pdf');
     public $record_class = 'Syllabus_item_model';
 
     function __construct()
@@ -13,14 +13,23 @@ class Syllabus_model extends Base_module_model
 
     function list_items($limit = NULL, $offset = NULL, $col = 'id', $order = 'desc', $just_count = false)
     {
-        $this->db->select('id, headline, description, release_date, pdf, published');
+        $this->db->select('id, headline, type, release_date, pdf, published');
         $data = parent::list_items($limit, $offset, $col, $order);
 
+        // echo "<pre>";
+        // var_dump($data);
+        // echo "</pre>";
+        //   die();
         foreach ($data as $key => $value) {
             // Convert PDF field to a download link
             if (!empty($value['pdf'])) {
                 $data[$key]['pdf'] = '<a href="' . img_path('syllabus/' . $value['pdf']) . '" target="_blank">Download PDF</a>';
             }
+
+                // Convert type field to readable format
+        if (isset($value['type'])) {
+            $data[$key]['type'] = ($value['type'] == 1) ? 'SOS' : 'Affiliated Colleges and Courses';
+        }
         }
 
         return $data;
@@ -76,14 +85,7 @@ class Syllabus_model extends Base_module_model
     function form_fields($values = array(), $related = array())
     {
         $fields = parent::form_fields();
-        // $CI =& get_instance();
-		// // notification group
-		// if (empty ($CI->fuel_notification_groups_model)) {
-		// 	$CI->load->module_model(FUEL_FOLDER, 'fuel_notification_groups_model');
-		// }
-		// $group_options = $CI->fuel_notification_groups_model->options_list();
-
-        // PDF upload field
+       
         $fields['pdf'] = array(
             'type' => 'asset',
             'multiple' => FALSE,
@@ -92,31 +94,17 @@ class Syllabus_model extends Base_module_model
             'comment' => 'Upload a PDF file.'
         );
 
-        // Title field
-        // $fields['headline'] = array(
-        //     'type' => 'text',
-        //     'label' => 'Headline',
-        //     'comment' => 'Enter the headline for the admission record.',
-        // );
 
-    //    $fields['release_date']['comment'] = 'A release date will automatically be created for you of the current date if left blank';
-
-
-        // Description field
-        // $fields['description'] = array(
-        //     'type' => 'textarea',
-        //     'label' => 'Description',
-        //     'comment' => 'Provide a brief description of the admission details.',
-        // );
-
-        // Published field
-        // $fields['published'] = array(
-        //     'type' => 'enum',
-        //     'options' => array('yes' => 'Yes', 'no' => 'No'),
-        //     'default' => 'yes',
-        //     'label' => 'Published',
-        //     'comment' => 'Select whether this record should be published.',
-        // );
+         // Dropdown select list
+    $fields['type'] = array(
+        'type' => 'select',
+        'label' => 'Type',
+        'options' => array(
+            '1' => 'SOS', 
+            '2' => 'Affiliated Colleges and Courses'
+        ),
+        'comment' => 'Select the type of college.'
+    );
 
         return $fields;
     }

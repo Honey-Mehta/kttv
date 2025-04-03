@@ -78,11 +78,12 @@
           //  $course_name = $CI->input->get('course'); // Using CI's input class to fetch GET parameters
 
             // Fetching data based on course_name
-            $query = "
-                SELECT * 
-                FROM colleges_course_list 
-                WHERE course_name = ?
-            ";
+                    $query = "
+            SELECT * 
+            FROM colleges_course_list 
+            WHERE course_name = ? 
+            AND published = 'yes'
+        ";
             $results = $CI->db->query($query, [$course_name])->result_array();
             ?>
 

@@ -15,9 +15,21 @@ class Affiliated_colleges_courses_model extends Base_module_model {
 
 	function list_items($limit = NULL, $offset = NULL, $col = 'id', $order = 'asc', $just_count = false)
 	{
-		$this->db->select('id, college_name, course_name, course_level, branch_name, district_name, branch_mode, published');
+		$this->db->select('id, college_name, course_name, course_level, branch_name, district_name, branch_mode, type, published');
 
 		$data = parent::list_items($limit, $offset, $col, $order);
+
+		foreach ($data as $key => $value) {
+            // Convert 'type' field to a readable format
+            if (isset($value['type'])) {
+              if ($value['type'] == 2) {
+                    $data[$key]['type'] = 'Affiliated Colleges and Courses';
+                }
+            }
+        }
+
+
+
 		return $data;
 	}
 
@@ -29,6 +41,7 @@ class Affiliated_colleges_courses_model extends Base_module_model {
 		$this->load->database();
 		$query = $this->db->select('id, course_name')
 						->from('course_name') // Assuming your table is named 'course_name'
+						->where('type', 2) // Corrected the where condition
 						->get();
 
 		$course_options = [];
@@ -103,7 +116,16 @@ class Affiliated_colleges_courses_model extends Base_module_model {
 
              $fields['branch_mode']['type'] = 'select';
 
-
+			 $fields['type'] = array(
+				'type' => 'select',
+				'label' => 'Type',
+				'options' => array(
+					'2' => 'Affiliated Colleges and Courses'
+				),
+				'comment' => 'Select the type of college.'
+			);
+		
+		
 
 		return $fields;
 
