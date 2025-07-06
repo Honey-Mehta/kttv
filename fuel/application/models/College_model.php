@@ -32,4 +32,77 @@ class College_model extends CI_Model {
         $this->db->where('type', '2');
         return $this->db->get()->result_array();
     }
+
+
+
+
+
+    public function get_notifications() {
+        // Adjusting the query to fetch necessary fields
+        $this->db->select('release_date, headline, pdf');
+        $this->db->from('notifications');
+        $this->db->where('published', 'yes'); // Filter only published notifications
+        $this->db->order_by('release_date', 'DESC'); // Order by descending date
+        $query = $this->db->get();
+    
+        return $query->result_array(); // Return as an array
+    }
+      
+
+
+    public function get_notifications_latest_five() {
+        $this->db->select('release_date, headline, pdf');
+        $this->db->from('notifications');
+        $this->db->where('published', 'yes'); // Filter only published notifications
+        $this->db->order_by('release_date', 'DESC'); // Order by latest first
+        $this->db->limit(5); // Get only the latest 5 notifications
+        $query = $this->db->get();
+    
+        return $query->result_array(); // Return as an array
+    }
+
+
+
+
+
+
+    public function get_notifications_by_date($date)
+    {
+        $this->db->select('headline, release_date, pdf'); // Select relevant columns
+        $this->db->from('notifications'); // Table name
+        $this->db->where('DATE(release_date)', $date); // Filter by the specific date
+        $this->db->where('published', 'yes'); // Only fetch published notifications
+        $this->db->order_by('release_date', 'DESC'); // Order by date
+        $query = $this->db->get();
+    
+        return $query->result_array(); // Return results as an array
+    }
+    
+
+    public function get_tender() {
+        // Adjusting the query to fetch necessary fields
+        $this->db->select('tender_date, name, pdf');
+        $this->db->from('tender');
+        $this->db->where('published', 'yes'); // Filter only published notifications
+        $this->db->order_by('tender_date', 'DESC'); // Order by descending date
+        $query = $this->db->get();
+    
+        return $query->result_array(); // Return as an array
+    }
+
+
+    public function get_tender_by_date($date)
+    {
+        $this->db->select('name, tender_date, pdf'); // Select relevant columns
+        $this->db->from('tender'); // Table name
+        $this->db->where('DATE(tender_date)', $date); // Filter by the specific date
+        $this->db->where('published', 'yes'); // Only fetch published notifications
+        $this->db->order_by('tender_date', 'DESC'); // Order by date
+        $query = $this->db->get();
+    
+        return $query->result_array(); // Return results as an array
+    }
+
+
+
 }

@@ -305,6 +305,26 @@ $config['modules']['notifications'] = [
 
 
 
+$config['modules']['notice_board'] = [
+    'module_name' => 'notice_board',
+    'model_name' => 'Notice_board_model',
+    'model_location' => '',  // Keep blank if using default location
+    'display_field' => 'headline',
+    'default_col' => '',
+    'default_order' => 'desc',
+    'sanitize_input' => ['template', 'php'],
+   'permission' => array(
+		'create' => 'notice_board/create',
+		'edit' => 'notice_board/edit',
+		'publish' => 'notice_board/publish',
+		'delete' => 'notice_board/delete'
+	),
+    'module_uri' => 'notice_board',
+    'table_headers' => ['id', 'headline', 'description','pdf','published'],  // Admin columns
+];
+
+
+
 $config['modules']['tender'] = [
     'module_name' => 'tender',
     'model_name' => 'Tender_model',
@@ -415,3 +435,21 @@ $config['modules']['timetable'] = array(
 		'delete' => 'timetable/delete'
 	),
 );
+
+$config['modules']['ministers'] = [
+    'module_name' => 'ministers',
+    'model_name' => 'Ministers_model',
+    'model_location' => '',  // Keep blank if using default location
+    'display_field' => 'name',
+    'default_col' => '',
+    'default_order' => 'desc',
+    'sanitize_input' => ['template', 'php'],
+    'permission' => array(
+		'create' => 'ministers/create',
+		'edit' => 'ministers/edit',
+		'publish' => 'ministers/publish',
+		'delete' => 'ministers/delete'
+	),
+    'module_uri' => 'ministers',
+    'table_headers' => ['id', 'name', 'description', 'image', 'seqno', 'published'],  // Admin columns
+];

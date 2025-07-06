@@ -14,5 +14,5 @@
 	<script type="text/javascript">
 		<?=$this->load->module_view(FUEL_FOLDER, '_blocks/fuel_header_jqx', array(), TRUE)?>
 	</script>
-
+       <script src="<?= site_url('fuel/modules/fuel/assets/js/custom.js'); ?>"></script>
 </head>

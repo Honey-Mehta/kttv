@@ -179,7 +179,7 @@ $config['editable_asset_filetypes'] = array(
 );
 
 // Max upload files size for assets
-$config['assets_upload_max_size']	= '5000';
+$config['assets_upload_max_size']	= '8000';
 
 // Max width for asset images being uploaded
 $config['assets_upload_max_width']  = '2500';
@@ -368,7 +368,10 @@ $config['nav']['modules'] = array(
 	'marquee' => 'Marquee',
 	'tender' => 'Tender',
 	'syllabus' => 'Syllabus',
-	'timetable' => 'Timetable'
+	'timetable' => 'Timetable',
+	'notice_board'=> 'Notice Board',
+	'ministers'=>'Ministers',
+
 );
 
 

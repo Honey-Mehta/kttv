@@ -26,7 +26,7 @@
                     <div class="message-content">
                         <div class="vision--bg-2">
                         </div>
-                        <h2 class="heading-2 mb-3">The Message of <span>Hon'ble VC</span></h2>
+                        <h2 class="heading-2 mb-3">The Message of <span>Hon'ble Kulguru</span></h2>
                         <p class="msg-head">Dear students,</p>
                         <p class="para-3">
                         <?php echo $vc_messages[0]['vc_message']  ?>
@@ -41,7 +41,7 @@
             //endforeach; 
             else: ?>
                 <!-- No records message -->
-                <p class="text-center">No Vc message found in the directory.</p>
+                <p class="text-center">No Kulguru message found in the directory.</p>
             <?php endif; ?>
 
 

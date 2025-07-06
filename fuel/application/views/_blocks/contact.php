@@ -1,9 +1,13 @@
 <div class="contact_us_6">
-  <div class="responsive-container-block container">
-    <form class="form-box">
-      <div class="container-block form-wrapper" >
+    <div class="container">
 
-      <?php 
+
+    <div class="row">
+    <div class="col-xl-4 col-lg-4">
+        <form class="form-box">
+            <div class="container-block form-wrapper">
+
+                <?php 
             // Fetch employee records
             $contact = fuel_model('contact', [
               
@@ -16,90 +20,187 @@
             if (!empty($contact)): // Check if records are available
                 //foreach ($vc_messages as $vc_message): 
                 
-                ?>  
-        <div class="mob-text">
-          <p class="text-blk contactus-head">
-            Get in Touch
-          </p>
-          <p class="text-blk contactus-subhead">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis diam lectus sapien.
-          </p>
+                ?>
+                    <div class="mob-text">
+                        <p class="text-blk contactus-head">
+                            Get in Touch
+                        </p>
+                        <p class="text-blk contactus-subhead">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis diam lectus sapien.
+                        </p>
 
-            <p class="text-blk map-contactus-head" id="w-c-s-fc_p-1-dm-id">
-          Reach us at
-        </p>
-        <p class="text-blk map-contactus-subhead">
-          Name : <?php echo $contact[0]['name']; ?>
-        </p>
-        <p class="text-blk map-contactus-subhead">
-         Email : <?php echo $contact[0]['email']; ?>
-        </p>
-        <p class="text-blk map-contactus-subhead">
-          Location : <?php echo $contact[0]['location']; ?>
-        </p>
-       <p class="text-blk map-contactus-subhead">
-       Contact timing : <?php echo $contact[0]['contact_time']; ?>
+                        <p class="text-blk map-contactus-head" id="w-c-s-fc_p-1-dm-id">
+                            Address
+                        </p>
+                        
+                        <p class="text-blk map-contactus-subhead">
+                          Location :<br/>
+                            <?php echo $contact[0]['name']; ?>
+                        </p>
+                        <p class="text-blk map-contactus-subhead">
+                            
+                            <?php echo $contact[0]['location']; ?>
+                        </p>
 
-       
-      </p>
 
-        </div>
+                    </div>
 
 
 
-        <?php 
+                    <?php 
         
       //endforeach; 
             else: ?>
-                <!-- No records message -->
-                <p class="text-center">No Contact Details Available.</p>
-            <?php endif; ?>
+                        <!-- No records message -->
+                        <p class="text-center">No Contact Details Available.</p>
+                        <?php endif; ?>
 
-        <!-- <div class="responsive-container-block" id="i2cbk">
-          <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="i10mt-3">
-            <p class="text-blk input-title">
-              FIRST NAME
-            </p>
-            <input class="input" id="ijowk-3" name="FirstName" placeholder="Please enter first name...">
-          </div>
-          <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="ip1yp">
-            <p class="text-blk input-title">
-              EMAIL
-            </p>
-            <input class="input" id="ipmgh-3" name="Email" placeholder="Please enter email...">
-          </div>
-          <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="ih9wi">
-            <p class="text-blk input-title">
-              PHONE NUMBER
-            </p>
-            <input class="input" id="imgis-3" name="PhoneNumber" placeholder="Please enter phone number...">
-          </div>
-          <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="i634i-3">
-            <p class="text-blk input-title">
-              WHAT DO YOU HAVE IN MIND ?
-            </p>
-            <textarea class="textinput" id="i5vyy-3" placeholder="Please enter query..."></textarea>
-          </div>
-        </div>
-        <button class="submit-btn" id="w-c-s-bgc_p-1-dm-id-2">
-          Submit
-        </button> -->
-      </div>
-    </form>
 
-  
+            </div>
 
-    <div class="responsive-cell-block wk-desk-7 wk-ipadp-12 wk-tab-12 wk-mobile-12" id="i772w">
-      <div class="map-part">
-       
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3626.9630391648698!2d77.29492707460666!3d24.624958754642126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397a5b69b845d1ff%3A0x3e1bf9be66f4132a!2sKrantiveer%20tatya%20tope%20university%2Cguna%2Cm.p!5e0!3m2!1sen!2sin!4v1736935503834!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <!-- <div class="map-box container-block"> -->
-        </div>
-      </div>
-    </div>
-  </div>
+
+            <div class="container-block form-wrapper">
+
+                <?php 
+// Fetch employee records
+$contact = fuel_model('contact', [
+
+'where' => ['published' => 'yes']
+]);
+
+
+
+
+if (!empty($contact)): // Check if records are available
+//foreach ($vc_messages as $vc_message): 
+
+?>
+                    <div class="mob-text">
+                        <p class="text-blk contactus-head">
+
+                        </p>
+                        <p class="text-blk contactus-subhead">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis diam lectus sapien.
+                        </p>
+
+                        <p class="text-blk map-contactus-head" id="w-c-s-fc_p-1-dm-id">
+                            Telephone Number
+                        </p>
+
+                     
+                        <p class="text-blk map-contactus-subhead">
+                            Landline Number :
+                            <?php echo $contact[0]['landline_number']; ?>
+                        </p>
+
+                        <p class="text-blk map-contactus-subhead">
+                            Office Number :
+                            <?php echo $contact[0]['office_number']; ?>
+                        </p>
+
+                        <p class="text-blk map-contactus-subhead">
+                            HelpLine Number Whatsapp Number :
+                            <?php echo $contact[0]['helpline_number_whatsapp_number']; ?>
+                        </p>
+
+
+                    </div>
+
+
+
+                    <?php 
+
+//endforeach; 
+else: ?>
+                        <!-- No records message -->
+                        <p class="text-center">No Contact Details Available.</p>
+                        <?php endif; ?>
+
+
+            </div>
+
+
+
+            <div class="container-block form-wrapper">
+
+                <?php 
+// Fetch employee records
+$contact = fuel_model('contact', [
+
+'where' => ['published' => 'yes']
+]);
+
+
+
+
+if (!empty($contact)): // Check if records are available
+//foreach ($vc_messages as $vc_message): 
+
+?>
+                    <div class="mob-text">
+                        <p class="text-blk contactus-head">
+
+                        </p>
+                        <p class="text-blk contactus-subhead">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis diam lectus sapien.
+                        </p>
+
+                        <p class="text-blk map-contactus-head" id="w-c-s-fc_p-1-dm-id">
+                            Reach us at
+                        </p>
+
+                        <p class="text-blk map-contactus-subhead">
+                            Email :
+                            <?php echo $contact[0]['email']; ?>
+                        </p>
+
+                        <p class="text-blk map-contactus-subhead">
+                            Contact timing :
+                            <?php echo $contact[0]['contact_time']; ?>
+
+
+                        </p>
+
+                    </div>
+
+
+
+                    <?php 
+
+//endforeach; 
+else: ?>
+                        <!-- No records message -->
+                        <p class="text-center">No Contact Details Available.</p>
+                        <?php endif; ?>
+
+
+            </div>
+
+
+
+
+
+
+
+        </form>
 </div>
 
+       <div class="col-xl-8 col-lg-8">
+        <div  id="i772w">
+            <div class="map-part">
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3626.9630391648698!2d77.29492707460666!3d24.624958754642126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397a5b69b845d1ff%3A0x3e1bf9be66f4132a!2sKrantiveer%20tatya%20tope%20university%2Cguna%2Cm.p!5e0!3m2!1sen!2sin!4v1736935503834!5m2!1sen!2sin"
+                width="100%" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <!-- <div class="map-box container-block"> -->
+            </div>
+        </div>
+
+        </div>
+
+                </div>
+    </div>
+</div>
+</div>
 <style>
 
 
@@ -326,7 +427,7 @@ body {
 
 
 .contact_us_6 * {
-  font-family: Nunito, sans-serif;
+ 
 }
 
 .contact_us_6 .text-blk {
@@ -406,21 +507,15 @@ body {
 
 .contact_us_6 .container-block.form-wrapper {
   background-color: white;
-  max-width: 450px;
+
   text-align: center;
-  padding-top: 50px;
-  padding-right: 40px;
-  padding-bottom: 50px;
-  padding-left: 40px;
+ padding: 20px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 20px 7px;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
   border-bottom-left-radius: 6px;
-  margin-top: 90px;
-  margin-right: 0px;
-  margin-bottom: 60px;
-  margin-left: 0px;
+  margin:10px 0 10px 0;
 }
 
 .contact_us_6 .text-blk.contactus-head {
@@ -532,13 +627,6 @@ body {
   border-bottom-left-radius: 40px;
 }
 
-.contact_us_6 .form-box {
-  z-index: 2;
-  margin-top: 0px;
-  margin-right: 48px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-}
 
 .contact_us_6 .text-blk.input-title {
   text-align: left;
@@ -589,29 +677,25 @@ body {
   background-position-x: 50%;
   background-position-y: 50%;
 }
-
+.map-part {
+  padding: 30px;
+}
 .contact_us_6 .map-part {
   width: 100%;
   height: 100%;
 }
 
 .contact_us_6 .text-blk.map-contactus-head {
-  font-weight: 900;
   font-size: 22px;
-  line-height: 32px;
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-bottom: 10px;
-  margin-left: 0px;
-  color: #03a9f4;
+ 
+    margin-bottom: 6px;
+  
+    color: #1e2d5a;
+    font-weight: 700;
 }
 
 .contact_us_6 .text-blk.map-contactus-subhead {
-  max-width: 300px;
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-bottom: 20px;
-  margin-left: 0px;
+
 }
 
 .contact_us_6 .social-media-links.mob {
@@ -686,12 +770,7 @@ body {
     display: block;
   }
 
-  .contact_us_6 .form-box {
-    margin-top: 200px;
-    margin-right: 60px;
-    margin-bottom: 40px;
-    margin-left: 0px;
-  }
+
 
   .contact_us_6 .link-img {
     margin-top: 0px;
@@ -730,12 +809,7 @@ body {
     flex-wrap: wrap;
   }
 
-  .contact_us_6 .form-box {
-    margin-top: 200px;
-    margin-right: 0px;
-    margin-bottom: 40px;
-    margin-left: 0px;
-  }
+  
 }
 
 @media (max-width: 768px) {
@@ -790,12 +864,7 @@ body {
     padding-left: 0px;
   }
 
-  .contact_us_6 .form-box {
-    margin-top: 200px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-  }
+
 
   .contact_us_6 .container-block.form-wrapper {
     margin-top: 0px;
@@ -804,23 +873,13 @@ body {
     margin-left: 0px;
   }
 
-  .contact_us_6 .form-box {
-    margin-top: 220px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-  }
-
-  .contact_us_6 .form-box {
-    margin-top: 220px;
-    margin-right: 0px;
-    margin-bottom: 50px;
-    margin-left: 0px;
-  }
+ 
 
   .contact_us_6 .text-blk.contactus-head {
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 36px;
+    line-height: 1.6;
+    font-weight: 600;
+    letter-spacing: 0px;
   }
 }
 

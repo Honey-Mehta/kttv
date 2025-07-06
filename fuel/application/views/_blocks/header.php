@@ -26,6 +26,7 @@
 
     <?php echo js('../js/jquery-3.6.0.min');?> 
 
+  
     <?php  
     if (!empty($is_blog)):
         echo $CI->fuel->blog->header();
@@ -85,7 +86,7 @@
                             </div>
                         </div>
                         <div class="logo container">
-                        <img class="logo-img" src="<?php echo img_path('KTTU_logo.png');?>" alt="KTTU">
+                        <img class="logo-img img-fluid" src="<?php echo img_path('KTTU_logo.png');?>" alt="KTTU">
                         </div>
                         <nav id="navmenu" class="navmenu">
                         <?php echo bootstrap_menu(array('container_tag_id' => ''), NULL, TRUE); // last arg switches toggle behaviour for drop-downs ?>

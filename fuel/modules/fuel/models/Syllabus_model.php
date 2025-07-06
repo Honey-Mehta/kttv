@@ -3,7 +3,7 @@ require_once('Base_module_model.php');
 
 class Syllabus_model extends Base_module_model
 {
-    public $required = array('headline','pdf');
+    public $required = array('headline');
     public $record_class = 'Syllabus_item_model';
 
     function __construct()
@@ -13,7 +13,7 @@ class Syllabus_model extends Base_module_model
 
     function list_items($limit = NULL, $offset = NULL, $col = 'id', $order = 'desc', $just_count = false)
     {
-        $this->db->select('id, headline, type, release_date, pdf, published');
+        $this->db->select('id, headline, type, release_date, pdf, affiliated_course, link, published');
         $data = parent::list_items($limit, $offset, $col, $order);
 
         // echo "<pre>";
@@ -30,6 +30,11 @@ class Syllabus_model extends Base_module_model
         if (isset($value['type'])) {
             $data[$key]['type'] = ($value['type'] == 1) ? 'SOS' : 'Affiliated Colleges and Courses';
         }
+
+        if (isset($value['affiliated_course'])) {
+            $data[$key]['affiliated_course'] = ($value['affiliated_course'] == 2) ? 'PG' : " ";
+        }
+
         }
 
         return $data;
@@ -59,22 +64,15 @@ class Syllabus_model extends Base_module_model
 
         }
 
-     
-    
-
         if (!empty($values['release_date']))
         {
            
-
             echo $a = str_replace('/', '-',$values['release_date']) ; echo '<br>';
 
             echo $b = date('Y-m-d', strtotime($a)); ; echo '<br>';
 
-          
         $values['release_date'] = $b ;
             //  var_dump($values); die;
-
-
 
         }
             return $values;
@@ -85,7 +83,7 @@ class Syllabus_model extends Base_module_model
     function form_fields($values = array(), $related = array())
     {
         $fields = parent::form_fields();
-       
+    
         $fields['pdf'] = array(
             'type' => 'asset',
             'multiple' => FALSE,
@@ -93,21 +91,33 @@ class Syllabus_model extends Base_module_model
             'hide_options' => TRUE,
             'comment' => 'Upload a PDF file.'
         );
-
-
-         // Dropdown select list
-    $fields['type'] = array(
-        'type' => 'select',
-        'label' => 'Type',
-        'options' => array(
-            '1' => 'SOS', 
-            '2' => 'Affiliated Colleges and Courses'
-        ),
-        'comment' => 'Select the type of college.'
-    );
-
+    
+        // Dropdown select list
+        $fields['type'] = array(
+            'type' => 'select',
+            'label' => 'Type',
+            'options' => array(
+                '1' => 'SOS',
+                '2' => 'Affiliated Colleges and Courses'
+            ),
+            'comment' => 'Select the type of college.',
+            'js' => 'onchange="toggleAffiliatedCourses(this.value)"' // JavaScript trigger
+        );
+    
+        // // Second dropdown (hidden by default)
+        $fields['affiliated_course'] = array(
+            'type' => 'select',
+            'label' => 'Affiliated Course Type',
+            'options' => array(
+                '0' => '--Select Course Type--',
+                '2' => 'PG'
+            ),
+            'display' => ($values['type'] == '2') // Show only when type = 2
+        );
+    
         return $fields;
     }
+    
 
     function _common_query($display_unpublished_if_logged_in = NULL)
     {

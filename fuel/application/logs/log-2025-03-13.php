@@ -68,3 +68,34 @@ ERROR - 2025-03-13 08:54:27 --> 404 Page Not Found: assets/js/fuel/fuel.min.js?c
 ERROR - 2025-03-13 08:54:29 --> 404 Page Not Found: assets/js/fuel/syllabus.js?c=-62170005208
 ERROR - 2025-03-13 08:54:50 --> 404 Page Not Found: assets/js/fuel/fuel.min.js?c=-62170005208
 ERROR - 2025-03-13 08:54:51 --> 404 Page Not Found: assets/js/fuel/syllabus.js?c=-62170005208
+ERROR - 2025-03-13 11:08:56 --> Severity: Notice --> Undefined index: type C:\wamp64\www\kttv\fuel\modules\fuel\models\Syllabus_model.php 117
+ERROR - 2025-03-13 11:09:14 --> Severity: Notice --> Undefined index: type C:\wamp64\www\kttv\fuel\modules\fuel\models\Syllabus_model.php 117
+ERROR - 2025-03-13 11:09:43 --> Severity: Notice --> Undefined index: type C:\wamp64\www\kttv\fuel\modules\fuel\models\Syllabus_model.php 117
+ERROR - 2025-03-13 11:09:58 --> Severity: Notice --> Undefined index: type C:\wamp64\www\kttv\fuel\modules\fuel\models\Syllabus_model.php 117
+ERROR - 2025-03-13 11:17:58 --> Severity: Notice --> Undefined index: type C:\wamp64\www\kttv\fuel\modules\fuel\models\Syllabus_model.php 117
+ERROR - 2025-03-13 11:18:00 --> 404 Page Not Found: assets/js/custom.js
+ERROR - 2025-03-13 11:18:13 --> 404 Page Not Found: assets/js/custom.js
+ERROR - 2025-03-13 11:18:16 --> 404 Page Not Found: assets/js/custom.js
+ERROR - 2025-03-13 11:18:21 --> 404 Page Not Found: assets/js/custom.js
+ERROR - 2025-03-13 11:18:26 --> Severity: Notice --> Undefined index: type C:\wamp64\www\kttv\fuel\modules\fuel\models\Syllabus_model.php 117
+ERROR - 2025-03-13 11:18:28 --> 404 Page Not Found: assets/js/custom.js
+ERROR - 2025-03-13 11:26:13 --> Severity: Notice --> Undefined index: type C:\wamp64\www\kttv\fuel\modules\fuel\models\Syllabus_model.php 117
+ERROR - 2025-03-13 11:26:23 --> Severity: Notice --> Undefined index: type C:\wamp64\www\kttv\fuel\modules\fuel\models\Syllabus_model.php 117
+ERROR - 2025-03-13 11:26:31 --> Severity: Notice --> Undefined index: type C:\wamp64\www\kttv\fuel\modules\fuel\models\Syllabus_model.php 117
+ERROR - 2025-03-13 11:26:55 --> Severity: Notice --> Undefined index: type C:\wamp64\www\kttv\fuel\modules\fuel\models\Syllabus_model.php 117
+ERROR - 2025-03-13 11:27:16 --> Severity: Notice --> Undefined index: type C:\wamp64\www\kttv\fuel\modules\fuel\models\Syllabus_model.php 117
+ERROR - 2025-03-13 11:27:18 --> 404 Page Not Found: assets/js/custom.js
+ERROR - 2025-03-13 11:30:13 --> Severity: Notice --> Undefined index: type C:\wamp64\www\kttv\fuel\modules\fuel\models\Syllabus_model.php 117
+ERROR - 2025-03-13 11:31:15 --> Severity: Notice --> Undefined index: type C:\wamp64\www\kttv\fuel\modules\fuel\models\Syllabus_model.php 117
+ERROR - 2025-03-13 11:34:13 --> Severity: Notice --> Undefined index: type C:\wamp64\www\kttv\fuel\modules\fuel\models\Syllabus_model.php 117
+ERROR - 2025-03-13 11:34:15 --> Severity: Notice --> Undefined index: type C:\wamp64\www\kttv\fuel\modules\fuel\models\Syllabus_model.php 117
+ERROR - 2025-03-13 11:34:16 --> Severity: Notice --> Undefined index: type C:\wamp64\www\kttv\fuel\modules\fuel\models\Syllabus_model.php 117
+ERROR - 2025-03-13 11:43:19 --> Severity: Notice --> Undefined index: type C:\wamp64\www\kttv\fuel\modules\fuel\models\Syllabus_model.php 117
+ERROR - 2025-03-13 11:52:41 --> Severity: Warning --> Invalid argument supplied for foreach() C:\wamp64\www\kttv\fuel\modules\fuel\models\Course_model.php 19
+ERROR - 2025-03-13 14:09:38 --> Severity: Notice --> Undefined index: type C:\wamp64\www\kttv\fuel\modules\fuel\models\Syllabus_model.php 117
+ERROR - 2025-03-13 14:20:24 --> Severity: Notice --> Undefined index: type C:\wamp64\www\kttv\fuel\modules\fuel\models\Syllabus_model.php 117
+ERROR - 2025-03-13 14:38:57 --> Severity: Notice --> Undefined index: type C:\wamp64\www\kttv\fuel\modules\fuel\models\Syllabus_model.php 117
+ERROR - 2025-03-13 15:50:05 --> Severity: Notice --> Undefined index: type C:\wamp64\www\kttv\fuel\modules\fuel\models\Syllabus_model.php 117
+ERROR - 2025-03-13 16:05:04 --> Severity: Warning --> Invalid argument supplied for foreach() C:\wamp64\www\kttv\fuel\modules\fuel\models\Course_model.php 19
+ERROR - 2025-03-13 18:07:21 --> Severity: Notice --> Undefined index: type C:\wamp64\www\kttv\fuel\modules\fuel\models\Syllabus_model.php 117
+ERROR - 2025-03-13 18:23:48 --> Severity: Notice --> Undefined index: type C:\wamp64\www\kttv\fuel\modules\fuel\models\Syllabus_model.php 116

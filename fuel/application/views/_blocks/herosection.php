@@ -1,48 +1,59 @@
-<!-- herosection start  -->
-
-
-
-<div class="herosection">
-
-<?php 
+    <!-- herosection start  -->
+    <div class="hero-position">
+        <div class="container-fluid p-0">
+            <div class="row m-0">
+                <div class="col-lg-8 col-md-8 col-sm-12 p-0 d-flex">
+                    <div class="herosection">
+                          <?php 
             // Fetch employee records
             $about = fuel_model('about', [
               'where' => ['published' => 'yes']
           ]);
+            if (!empty($about)): 
+                ?>
+                        <div class="hero-content">
+                            <h1 class="hero-title">Krantivir Tatya Tope<br /> Vishwavidyalay</h1>
+                            <p class="hero-para"><?php echo $about[0]['about']; ?></p>
+                        </div>
 
-           
-            
-            
-            if (!empty($about)): // Check if records are available
-               // foreach ($vc_messages as $vc_message): 
-                
-                ?>  
-
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Krantivir Tatya Tope<br /> Vishwavidyalaya</h1>
-                <!-- <p class="hero-para">
-                    
-               Krantiveer Tatyatope University, Guna aspires to establish itself as a prominent
-                    educational Institution in the Malwa area by providing education aligned with the New Education
-                    Policy-2020
-                
-
-                
-                </p> -->
-
-                <?php echo $about[0]['about']; ?>
-            </div>
-        </div>
-
-        <?php 
+                         <?php 
         //endforeach; 
             else: ?>
-                <!-- No records message -->
-                <p class="text-center">No  About Details found in the directory.</p>
-            <?php endif; ?>
-    </div>
+           <!-- No records message --> <?php endif; ?>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 p-0 d-flex">
 
+                    <div class="img-content">
+                    <?php 
+            $ministers = fuel_model('ministers', ['where' => ['published' => 'yes']]); // Fetch employee records 
+            if (!empty($ministers)): // Check if records are available 
+                foreach ($ministers as $minister): ?>
+
+
+
+                        <div class="cm-img d-flex align-items-center mb-2">
+<img class="me-2 minister-img" src="<?= img_path('ministers/'.$minister['image']); ?>" alt="Minister Image" />
+                            <div class="">
+                                <h3 class=""><?php echo $minister['name'] ?></h3>
+                                <p class=""><?php echo $minister['description'] ?></p>
+                            </div>
+                        </div>
+              
+                <?php endforeach; 
+            else: ?>
+                <p class="text-center">No Ministers found in the directory.</p>
+            <?php endif; ?>
+                
+                     
+                    </div>
+                </div>
+            </div>
+         
+        </div>
+
+
+    </div>
 
  <!-- Hero section end -->
 <?php 

@@ -27,6 +27,7 @@
                             <tbody>
                                 <tr>
                                     <th width="90%">SOS Course Syllabus</th>
+                               
                                 </tr>
                                 <?php 
                                 $courses_offered = fuel_model('syllabus', [
@@ -41,14 +42,14 @@
                                 ?>
                                 <tr>
                                     <td>
-                                        <?php if (!empty($courses_offer['pdf'])): ?>
-                                            <a href="<?= site_url('assets/images/syllabus/' . $courses_offer['pdf']); ?>" target="_blank" style="text-decoration:none;">
+                                        
+                                            <a href="<?php echo  $courses_offer['link']; ?>" target="_blank" style="text-decoration:none;">
                                                 <?= $courses_offer['headline']; ?>
                                             </a>
-                                        <?php else: ?>
-                                            <?= $courses_offer['headline']; ?>
-                                        <?php endif; ?>
+                                      
                                     </td>
+
+                                  
                                 </tr>
                                 <?php endforeach; else: ?>
                                 <tr>
@@ -93,6 +94,7 @@
                             <tbody>
                                 <tr>
                                     <th width="90%">PG Course Syllabus</th>
+                                  
                                 </tr>
                                 <?php 
                                 $pg_courses = fuel_model('syllabus', [
@@ -108,14 +110,13 @@
                                 ?>
                                 <tr>
                                     <td>
-                                        <?php if (!empty($course['pdf'])): ?>
-                                            <a href="<?= site_url('assets/images/syllabus/' . $course['pdf']); ?>" target="_blank" style="text-decoration:none;">
+                                       
+                                            <a href="<?php echo  $courses_offer['link']; ?>" target="_blank" style="text-decoration:none;">
                                                 <?= $course['headline']; ?>
                                             </a>
-                                        <?php else: ?>
-                                            <?= $course['headline']; ?>
-                                        <?php endif; ?>
+                                     
                                     </td>
+                                 
                                 </tr>
                                 <?php endforeach; else: ?>
                                 <tr>

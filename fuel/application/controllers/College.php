@@ -122,4 +122,76 @@ class College extends CI_Controller {
     }
 
 
+
+    public function get_notifications()
+{
+    $date = $this->input->get('date'); // Get date from request
+    //$this->load->model('Notifications_model'); // Load the model
+
+    if ($date) {
+        // Fetch filtered notifications
+        $notifications = $this->College_model->get_notifications_by_date($date);
+    } else {
+        // Fetch all notifications
+        $notifications = $this->College_model->get_notifications();
+    }
+
+    // Return JSON response
+    if ($notifications) {
+        echo json_encode(['status' => 'success', 'data' => $notifications]);
+    } else {
+        echo json_encode(['status' => 'error', 'message' => 'No notifications found.']);
+    }
+}
+
+
+public function get_notifications_five()
+{
+    $date = $this->input->get('date'); // Get date from request
+    //$this->load->model('Notifications_model'); // Load the model
+
+    if ($date) {
+        // Fetch filtered notifications
+        $notifications = $this->College_model->get_notifications_by_date($date);
+    } else {
+        // Fetch all notifications
+        $notifications = $this->College_model->get_notifications_latest_five();
+    }
+
+    // Return JSON response
+    if ($notifications) {
+        echo json_encode(['status' => 'success', 'data' => $notifications]);
+    } else {
+        echo json_encode(['status' => 'error', 'message' => 'No notifications found.']);
+    }
+}
+
+
+
+public function get_tender()
+{
+    $date = $this->input->get('date'); // Get date from request
+    //$this->load->model('Notifications_model'); // Load the model
+
+    if ($date) {
+        // Fetch filtered notifications
+        $notifications = $this->College_model->get_tender_by_date($date);
+    } else {
+        // Fetch all notifications
+        $notifications = $this->College_model->get_tender();
+    }
+
+    // Return JSON response
+    if ($notifications) {
+        echo json_encode(['status' => 'success', 'data' => $notifications]);
+    } else {
+        echo json_encode(['status' => 'error', 'message' => 'No notifications found.']);
+    }
+}
+
+
+
+
+
+
 }

@@ -3,7 +3,7 @@ require_once(FUEL_PATH . 'models/Base_module_model.php');
 
 class Contact_model extends Base_module_model
 {
-    public $required = ['name','email','location','contact_time'];
+    public $required = ['name'];
     public $record_class = 'Contact_model_item';
 
 
@@ -14,7 +14,7 @@ class Contact_model extends Base_module_model
 
     public function list_items($limit = NULL, $offset = 0, $col = 'name', $order = 'asc', $just_count = false)
     {
-        $this->db->select('id, name, email, location, contact_time, published');
+        $this->db->select('id, name, email, helpline_number_whatsapp_number, landline_number, office_number, location, contact_time, published');
         return parent::list_items($limit, $offset, $col, $order, $just_count);
     }
 

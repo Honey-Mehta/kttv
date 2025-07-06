@@ -58,7 +58,7 @@ $config['auto_search_views'] = TRUE;
 
 // max upload files size for assets
 // $config['assets_upload_max_size']	= 1024;
-$config['assets_upload_max_size']	= 5000;
+$config['assets_upload_max_size']	= 8000;
 
 // Max width for asset images being uploaded
 // $config['assets_upload_max_width']  = 2500;
